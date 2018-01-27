@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ParentLanding</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="usc.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/signCss.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <style>
+     
+    </style>
+
+</head>
+<body ng-app="app" ng-controller="mainController as main">
+  <div class="temp"></div>
+  <div class="club_name">
+    <div class="cn1"></div>
+    <div class="cn2">Arcadia Riptides</div>
+    <div class="cn3">SWIMMING CLUB</div>
+  </div>
+  <div class="topBar">
+    <div><img src="images/topBar1.jpg"></div>
+    <div><img src="images/topBar2.jpg"></div>
+    <div><img src="images/topBar3.jpg"></div>
+    <div><img src="images/topBar4.jpg"></div>
+    <div><img src="images/topBar5.jpg"></div>
+  </div>
+  <div class="topnav">
+    <div class="page_links">
+      <a href=""><i class="fa fa-home fa-lg" aria-hidden="true" style="padding-right: 4px;"></i>HOME</a>
+      <a href="sign.html" class="focus"><i class="fa fa-bars fa-lg" aria-hidden="true" style="padding-right: 4px;"></i>EVENTS</a>
+      <a href="parentProfilePage.html"><i class="fa fa-user fa-lg" aria-hidden="true" style="padding-right: 4px;"></i>PROFILE</a>
+      
+    </div>
+    <div class="page_out_links">
+      <a href="">LOGOUT</a>
+    </div> 
+  </div>
+  <div class="sidenav">
+    <div class="scroll_meets">
+      <a href="" class="focus">MEET 1</a>
+      <a href="">MEET 2</a>
+      <a href="">MEET 3</a>
+      <a href="">MEET 4</a>
+      <a href="">MEET 5</a>
+    </div>
+  </div>
+<div  class="content_div">
+  <section class="events">
+  <div class="event_cart_h">
+    <h1>Event List</h1>
+    <span class="cart_m"><button ng-click="main.showCart()">Cart  2</button></span>
+  </div>
+  <div class="cartDisp" ng-show="main.cartDiv">
+           <div class="cart_table">
+            <table>
+                <tr>
+                    <th>Event</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="item in main.cartStorage.items">
+                    <td>{{item.name}}</td>
+                    <td>{{item.price | currency}}</td>
+                    <td><button ng-click="main.removeFromCart(item)"><i class="fa fa-minus-square fa-lg" aria-hidden="true"></i></button></td>
+                </tr>
+            </table>
+        </div>
+        </div>
+  <div  class="tbl-header">
+    <table  cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>AGE</th>
+          <th>TIME</th>
+          <th>PRICE</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  
+  
+  <div class="tbl-content">
+    <table  cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr ng-repeat="item in main.items">
+          <td>{{ item.name }}</td>
+          <td>{{ item.age }}</td>
+          <td style="padding-left: 20px;">{{ item.time }}</td>
+          <td style="padding-left: 23px;">{{ item.price | currency }}</td>
+          <td style="padding-left: 33px;"><button ng-show="item.addButton" ng-click="main.addToCart(item)"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  
+    <div class="cart">
+        <div class="class_count">
+          <h2>Cart</h2>
+          <h3>{{ main.length }}</h3>
+        </div>  
+
+       
+      <div ng-show="main.showSignupButton()" class="signup_button"><a href="">SignUp Events</a></div>  
+      <div class="msg">
+        <span>{{main.msg}}</span>
+      </div>
+    </div>
+    
+
+</section>
+</div>
+
+<script type="text/javascript">
+  $(window).on("load resize ", function() {
+    var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    $('.tbl-header').css({'padding-right':scrollWidth});
+  }).resize();
+</script>
+
+<script type="text/javascript">
+  angular.module('app', []) 
+    .factory('cartStorage', function() {
+        var _cart = {
+            items: []
+        };
+        var service = {
+            get cart() {
+              return _cart;
+            }
+        }
+        return service;
+    })
+    .controller('mainController', function(cartStorage) {
+        var _this = this;
+        _this.cartStorage = cartStorage.cart;
+        _this.length = _this.cartStorage.items.length;
+        _this.cartDiv = false;
+
+          
+
+
+        _this.items = [{
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }, {
+            name: '200 freestyle',
+            age: '11-14',
+            time: '2:20:56',
+            price: 10,
+            addButton: true
+        }];
+
+        _this.showCart = function() {
+           if(_this.cartDiv == false)   
+            _this.cartDiv = true;
+          else{
+            _this.cartDiv = false;
+          }
+         } 
+        _this.showSignupButton = function() {
+          if(_this.cartStorage.items.length == 0){
+            return false;
+          }
+          return true;
+         } 
+        _this.addToCart = function(item) {
+          if(_this.cartStorage.items.length <= 2){
+            _this.cartStorage.items.push(item);
+            item.addedToCart = true;
+            item.addButton = false;
+            _this.length += 1;
+          }
+          else{
+            _this.msg = "You can not add more events";
+          }
+
+        }
+        _this.removeFromCart = function(item) {
+            item.addButton = true;
+            _this.msg = "";
+            _this.length -= 1;
+            var itemIndex = _this.cartStorage.items.indexOf(item);
+            if (itemIndex > -1) {
+                _this.cartStorage.items.splice(itemIndex, 1);
+
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
