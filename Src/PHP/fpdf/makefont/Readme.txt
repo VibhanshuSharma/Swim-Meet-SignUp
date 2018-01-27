@@ -1,1 +1,1 @@
-Internet makefont files
+Internal makefont files of the library.
