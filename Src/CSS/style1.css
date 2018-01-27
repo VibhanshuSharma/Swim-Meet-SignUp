@@ -1,0 +1,421 @@
+html, body{
+  width: 100%;
+  background-image: url('../images/bg12.jpg');
+  font-family: Segoe UI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.headreplace{
+  width: 100%;
+  height: 60px;
+}
+.header{
+  background-color: #000;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 2;
+} 
+#navbar{
+  float: right;
+  height: 60px;
+  /*width: 50%;*/
+}
+#navbar>li{
+  padding-right: 50px;
+  list-style: none;
+  float: left;
+}
+#navbar>li>a{
+  display: block;
+  color: #fff;
+  line-height: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+li>a:hover{
+  color: #f6734a;
+}
+.brandname{
+  float: left;
+  line-height: 60px;
+}
+.brandname>a{
+  text-decoration: none;
+  color: #fff;
+  padding-left: 20px;
+  text-transform: uppercase;
+}
+.imgbar{
+  /*border: 2px solid red;*/
+  width: 98%;
+  height: 180px;
+  margin-left: 1%;
+}
+.imgbar img{
+  float: left;
+  height: 100%;
+  width: 20%;
+}
+.main-content{
+  /*border: 1px solid green;*/
+  width: 50%;
+  height: 5vh;
+}
+.breadcrumb{
+  height: 100%;
+}
+
+#bc{
+  padding: 2px 15px;
+  background-color: #fff;
+  margin-top: 1%;
+}
+#bc>li>a{
+  text-decoration: none;
+}
+
+.main-content{
+  /*padding-top: 10px;*/
+  float: left;
+  width: 73%;
+  height: 100vh;
+  /*border: 1px solid red;*/
+  /*margin-top: 2%;*/
+  margin-left: 1%;
+  border-bottom: 1px solid #000;
+}
+.meetsinfo{
+  height: 40px;
+  width: 130%;
+  margin-top: 1%;
+  background-color:/* #fff;
+  margin-top: 1%;*/
+}
+.meetsym{
+  float: left;
+  width: 10%;
+  color: #808080;
+  font-size: 13px; 
+  /*padding-top: 12px;*/
+  letter-spacing: 1px;
+  padding-left: 10px; 
+}
+.meets{
+  float: left;
+  width: 100%;
+  margin-left: -45px;
+  /*height: 25px;*/
+  /*border: 1px solid green;*/
+  /*padding-top: 5px;*/
+  /*overflow-x: auto;*/
+}
+.meets li{
+  float: left;
+  list-style: none;
+  margin-left: 5px;
+  background-color: #000;
+  /*opacity: 0.8;*/
+  
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.meets li a{
+  text-decoration: none;
+  color: #fff;
+}
+.meetinfosym{
+  float: left;
+  width: 30%;
+  /*color: red;*/
+  font-size: 14px; 
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.meetinfodata{
+  float: left;
+  width: 70%;
+  /*color: red;*/
+  font-size: 14px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  /*text-align: center;*/
+}
+.meetinfo{
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  background-color: #003973;
+
+}
+.cartInfo{
+  float: left;
+  width: 24%;
+  height: 55vh;
+  margin-top: 50px;
+  margin-left: 75%;
+  /*margin-right: %;*/
+  border-bottom: 1px solid #000;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1;
+}
+.cartHeader{
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  background-color: #000;
+  opacity: 0.8;
+  color: white;
+}
+.cartHeader p{
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  float: left;
+}
+.cartHeader span{
+  color: #fff;
+  float: right;
+}
+.dropdown{
+  display: none;
+color:white
+}
+.cartbtn{
+  display: none;
+}
+.eventlistheader{
+  background-color: #000;
+  opacity: 0.8;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 1px; 
+  margin-top: 1%; 
+}
+.eventlisttable{
+  width: 100%;
+  margin-top: 1%;
+  background-color: #fff;
+}
+#evntlisttab{
+  /*overflow-x: auto;*/
+  height: 225px;
+  width: 100%;
+}
+.payeeinfo{
+  display: none;
+}
+thead tr{
+  color: white;
+          background: rgba(52,221,247,1);
+          background: -moz-linear-gradient(left, rgba(52,221,247,1) 0%, rgba(14,21,235,1) 23%, rgba(12,245,183,1) 48%, rgba(24,240,182,1) 71%, rgba(122,230,39,1) 100%);
+          background: -webkit-gradient(left top, right top, color-stop(0%, rgba(52,221,247,1)), color-stop(23%, rgba(14,21,235,1)), color-stop(48%, rgba(12,245,183,1)), color-stop(71%, rgba(24,240,182,1)), color-stop(100%, rgba(122,230,39,1)));
+          background: -webkit-linear-gradient(left, rgba(52,221,247,1) 0%, rgba(14,21,235,1) 23%, rgba(12,245,183,1) 48%, rgba(24,240,182,1) 71%, rgba(122,230,39,1) 100%);
+          background: -o-linear-gradient(left, rgba(52,221,247,1) 0%, rgba(14,21,235,1) 23%, rgba(12,245,183,1) 48%, rgba(24,240,182,1) 71%, rgba(122,230,39,1) 100%);
+          background: -ms-linear-gradient(left, rgba(52,221,247,1) 0%, rgba(14,21,235,1) 23%, rgba(12,245,183,1) 48%, rgba(24,240,182,1) 71%, rgba(122,230,39,1) 100%);
+          background: linear-gradient(to right, rgba(52,221,247,1) 0%, rgba(14,21,235,1) 23%, rgba(12,245,183,1) 48%, rgba(24,240,182,1) 71%, rgba(122,230,39,1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34ddf7', endColorstr='#7ae627', GradientType=1 );
+}
+#addbtn{
+  background-color: #fff;
+  /*box-shadow: none;*/
+}
+.cartInfo table{
+  width: 100%;
+}
+.cartInfo th, .modal-dialog th{
+  width: 33%;
+  text-align: center;
+  background-color: #003973;
+  color: #fff;
+  padding: 10px 10px;
+}
+.payment th, .modal-dialog th{
+  width: 33%;
+  text-align: left;
+  background-color: #fff;
+  color: black;
+  padding: 10px 10px;
+	
+}
+#innertable tr{
+  width: 100%;
+}
+#innertable th, #innertable td{
+  width: 50%;
+  text-align: center;
+  padding: 7px;
+}
+#payee{
+  color: black;
+  background-color: white;
+}
+.cartInfo td, .modal-dialog td{
+  width: 33%;
+  text-align: center;
+  padding: 10px 10px; 
+}
+.signup_button{
+ padding: 10px 10px; 
+ color: #fff;
+ width: 98%;
+ margin-left: 1%; 
+}
+.brandimg{
+  float: left;
+  width: 34%;
+}
+.brandimg img{
+  width: 100%;
+  height: 50px;
+}
+.signup_button1{
+	padding: 10px 20px;
+	color: #fff;
+	float: right;
+	margin-right: 2%;
+	margin-bottom: 1%;
+}
+.msg{
+  font-size: 13px;
+  color: red;
+  text-align: center;
+}
+#navbrn{
+  color: #fff;
+  font-weight: bold;
+  font-size: 17px;
+}
+.adbtn1{
+  display: none;
+}
+.adbtn2{
+  display: block;
+}
+@media only screen and (max-width: 992px){   
+  .payeeinfo{
+    display: block;
+    width: 100%;
+    margin-top: 1%;
+    background-color:#003973; 
+  }
+  .piheader{
+    color: #fff;
+    padding: 1px;
+    font-weight: 12px;
+  }
+  .adbtn2{
+    display: none;
+  }
+  .adbtn1{
+    display: block;
+  }
+  #navbar>li {
+    padding-right: 25px;
+  }
+  .brandname{
+    display: none;
+  }
+  .imgbar{
+    display: none;
+  }
+  .main-content{
+    width: 99%;
+  }
+  .cartInfo{
+    display: none;
+  }
+  .dropdown{
+    display: block;
+    float: left;
+    margin-top: 1%;
+  }
+  .dropdown-menu li a{
+    color: #fff;
+  }
+  .cartbtn{
+    float: right;
+    margin-top: 1%;
+    margin-right: 2%;
+    background-color: #000;
+    opacity: 0.8;
+    color: #fff;
+    display: block;
+    padding: 7px 30px;
+  }
+  .meets{
+    display: none;
+  } 
+  .meetinfo{
+    height: 60px;
+    /*padding-top: 11px;*/
+    background-color: #003973;
+    color: #fff;
+  }
+  .meetsym{
+    display: none;
+  }
+  .meetinfosym{
+   width: 30%;
+   font-size: 13px;
+   padding: 0;
+  }
+  .meetsinfo{
+    display: none;
+  }
+  .meetinfodata{
+    width: 70%;
+    font-size: 13px;
+    padding: 0;
+    padding-right: 20px;
+  }
+  .navbar{
+    width: 100%;
+  }
+  .navbar li{
+    padding-right: 35px;
+  }
+  .navbar li:active{
+    background-color:green;
+  }
+  .navbar li a{
+    font-size: 13px
+  }
+
+  .navbtns{
+    color: #fff;
+    height: 60px;
+  }
+
+  .msg{
+    font-size: 10px;
+  }
+  .brandimg{
+    width: 17%;
+  }
+}
+
+/*@media (min-width: 769px) and (max-width: 992px){
+  .imgbar {
+    height: 150px;
+  }
+  .meets li{
+    font-size: 12px;
+  }
+  .meetinfo{
+    height: 60px;
+  }
+  .signup_button{
+    padding: 10px 10px; 
+    color: #fff;
+    margin: 20px 80px; 
+  }
+}*/
+
